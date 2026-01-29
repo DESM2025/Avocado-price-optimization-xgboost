@@ -1,0 +1,16 @@
+name: dynamic_pricing
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - pandas
+  - numpy
+  - matplotlib
+  - seaborn
+  - scikit-learn
+  - xgboost
+  - jupyter
+  - ipykernel
+  - requests
+  - pip
