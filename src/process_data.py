@@ -39,7 +39,7 @@ def get_avocado_data():
     # ordenar por fecha 
     df = df.sort_values(by=['Date', 'region'])
  
-    #eliminar reguiones que no sean ciudades
+    #eliminar regiones que no sean ciudades
     eliminar = ['TotalUS','California','GreatLakes','Midsouth','Northeast','NorthernNewEngland','Plains','SouthCarolina','SouthCentral','Southeast','West','WestTexNewMexico']
     df = df[~df['region'].isin(eliminar)]
 
