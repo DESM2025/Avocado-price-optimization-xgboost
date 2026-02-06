@@ -7,16 +7,16 @@ import os
 
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DATA_PATH = os.path.join(BASE_DIR, 'data', 'avocado_processed_city.csv')
+DATA_PATH = os.path.join(BASE_DIR, 'data', 'avocado_processed_Total.csv')
 MODEL_DIR = os.path.join(BASE_DIR, 'models')
-REGION = 'LosAngeles'
+REGION = 'TotalUS' # como el csv tiene solo TotalUS esta variable es inutil aqui
 
 def train_model():
 
     df= pd.read_csv(DATA_PATH)
     df = df[df['region'] == REGION].copy() #filtrar solo los angeles
 
-    #definir  features x y target y
+    #definir x features e y target
     FEATURES = ['AVGPrice', 'month', 'year', 'week', 'type_organic']
     TARGET = 'Volumen' # predecir volumen de ventas
 
