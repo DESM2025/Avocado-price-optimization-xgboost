@@ -16,7 +16,7 @@ def train_model():
     df= pd.read_csv(DATA_PATH)
     df = df[df['region'] == REGION].copy() #filtrar solo los angeles
 
-    #definir  features x y target y
+    #definir  features 
     FEATURES = ['AVGPrice', 'month', 'year', 'week', 'type_organic']
     TARGET = 'Volumen' # predecir volumen de ventas
 
@@ -37,10 +37,9 @@ def train_model():
         learning_rate=0.05,
         max_depth=6, #profundidad del arbol
         early_stopping_rounds=50,
-        n_jobs=-1, #uso nucleos del cpu
-        random_state=42 #semilla
+        n_jobs=-1, 
+        random_state=42 
     )
-
     #         (features,target,set evaluacion,verbose=50 cada 50 iteraciones)
     model.fit(X_train, y_train,eval_set=[(X_test, y_test)],verbose=50)
     
